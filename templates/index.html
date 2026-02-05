@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAST - TC Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Using a reliable CDN for Marked.js (Markdown parser) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div style="display: flex; flex-direction: column;">
+                <h1>✦ BLAST Gen</h1>
+                <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Local LLM Testcase
+                    Generator</span>
+            </div>
+            <div
+                style="font-size: 0.8rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border);">
+                Running: gemma3:1b
+            </div>
+        </header>
+
+        <div id="chat-area" class="chat-area">
+            <div class="message bot">
+                Hey there! I'm your local QA assistant. Describe a feature or paste a requirement, and I'll generate
+                comprehensive Positive and Negative test cases for you using the local <b>Ollama</b> instance.
+            </div>
+            <!-- Messages will be injected here -->
+        </div>
+
+        <div class="input-area">
+            <textarea id="user-input"
+                placeholder="E.g., A registration form that requires a valid corporate email address..."></textarea>
+            <button id="send-btn" onclick="sendMessage()">Generate Cases</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
